@@ -37,7 +37,8 @@ PLACE CODE SNIPPET HERE
 - [YOUR NAME](https://github.com/your-github-url)
 -----------------
 # Planning Components
-- Link to ERD for MVP:
+- [ERD for MVP](https://dbdiagram.io/d/vocabYOUlary-67452cfae9daa85acab11b61) 
+<!-- todo: addp ERD photo -->
 - Link to flow chart for MVP:
 - Link to Project Board with Issue Tickets: 
 

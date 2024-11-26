@@ -3,7 +3,7 @@
 
 Here I am putting an overview of what my project is about. It comes below the name of my project so that others can read what it is about and get more details.
 
-[View App](#https://vocabyoulary-alyssa.netlify.app/)
+[View App](https://vocabyoulary-alyssa.netlify.app/)
 
 ## Get Started <!-- OPTIONAL, but doesn't hurt -->
 PLACE CODE SNIPPET HERE
@@ -23,9 +23,9 @@ PLACE CODE SNIPPET HERE
 https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#your-link)
-- [Wireframes](#your-link)
-- [Project Board](#your-link)
+- [Check out the deployed site](https://vocabyoulary-alyssa.netlify.app/)
+- [Wireframes](https://www.figma.com/design/IW4jF3GnzCFLYbEXlgFNIZ/MVP?node-id=0-1&node-type=canvas&t=5eInKAM1ZjVjlKBN-0)
+- [Project Board](https://github.com/users/alyssacleland/projects/2)
 
 ## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
 PLACE CODE SNIPPET HERE
@@ -39,8 +39,9 @@ PLACE CODE SNIPPET HERE
 # Planning Components
 - [ERD for MVP](https://dbdiagram.io/d/vocabYOUlary-67452cfae9daa85acab11b61) 
 <!-- todo: addp ERD photo -->
-- Link to flow chart for MVP:
-- Link to Project Board with Issue Tickets: 
+- [Link to flow chart for MVP](#put here)
+- [Link to Project Board with Issue Tickets](https://github.com/users/alyssacleland/projects/2)
+- [Wireframes for MVP](https://www.figma.com/design/IW4jF3GnzCFLYbEXlgFNIZ/MVP?node-id=0-1&node-type=canvas&t=5eInKAM1ZjVjlKBN-0)
 
 # NSS Readme Requirement
 These are the requirements for your README on every repo you create while at NSS:

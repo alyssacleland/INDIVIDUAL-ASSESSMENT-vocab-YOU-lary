@@ -3,7 +3,7 @@
 
 Here I am putting an overview of what my project is about. It comes below the name of my project so that others can read what it is about and get more details.
 
-[View App](#your-link)
+[View App](#https://vocabyoulary-alyssa.netlify.app/)
 
 ## Get Started <!-- OPTIONAL, but doesn't hurt -->
 PLACE CODE SNIPPET HERE

@@ -1,0 +1,18 @@
+{
+  "-OCfVfhF4Ax-ta1IGjT9": {
+    "definition": "A statement that evaluates to true or false, used for decision-making.",
+    "language": "-OCfSXuBB1p_72Y6gaz6",
+    "public": false,
+    "time_submitted": "8:00pm",
+    "title": "Condition",
+    "uid": "mVRmxah8ZDhrGMmopmqdJSXRjVG3"
+  },
+  "-OCfVrwWrZ5BtQ8wF-kT": {
+    "definition": "A block of code designed to perform a specific task. Can take inputs (parameters) and return an output.",
+    "language": "-OCfSXuBB1p_72Y6gaz6",
+    "public": false,
+    "time_submitted": "8:00pm",
+    "title": "Function",
+    "uid": "mVRmxah8ZDhrGMmopmqdJSXRjVG3"
+  }
+}

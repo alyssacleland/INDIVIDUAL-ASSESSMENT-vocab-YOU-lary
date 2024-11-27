@@ -24,8 +24,10 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](https://vocabyoulary-alyssa.netlify.app/)
-- [Wireframes](https://www.figma.com/design/IW4jF3GnzCFLYbEXlgFNIZ/MVP?node-id=0-1&node-type=canvas&t=5eInKAM1ZjVjlKBN-0)
-- [Project Board](https://github.com/users/alyssacleland/projects/2)
+- [MVP Wireframes](https://www.figma.com/design/IW4jF3GnzCFLYbEXlgFNIZ/MVP?node-id=0-1&node-type=canvas&t=5eInKAM1ZjVjlKBN-0)
+- [Project Planning Board](https://github.com/users/alyssacleland/projects/2)
+- [ERD for MVP](https://dbdiagram.io/d/vocabYOUlary-67452cfae9daa85acab11b61) 
+- [Flow Chart for MVP](https://www.figma.com/board/78EI4Ig8VtVjMrzapcZjdl/vocabYOUlary-data-flow-chart?node-id=0-1&t=dUTCTibutMGwyj2L-1)
 
 ## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
 PLACE CODE SNIPPET HERE
@@ -35,13 +37,8 @@ PLACE CODE SNIPPET HERE
 
 ## Contributors
 - [YOUR NAME](https://github.com/your-github-url)
+
 -----------------
-# Planning Components
-- [ERD for MVP](https://dbdiagram.io/d/vocabYOUlary-67452cfae9daa85acab11b61) 
-<!-- todo: addp ERD photo -->
-- [Link to flow chart for MVP](#put here)
-- [Link to Project Board with Issue Tickets](https://github.com/users/alyssacleland/projects/2)
-- [Wireframes for MVP](https://www.figma.com/design/IW4jF3GnzCFLYbEXlgFNIZ/MVP?node-id=0-1&node-type=canvas&t=5eInKAM1ZjVjlKBN-0)
 
 # NSS Readme Requirement
 These are the requirements for your README on every repo you create while at NSS:

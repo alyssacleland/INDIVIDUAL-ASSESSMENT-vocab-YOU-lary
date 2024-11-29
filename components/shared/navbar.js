@@ -20,10 +20,7 @@ const navBar = () => {
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
   </div>
-            <span class="navbar-text">
-            <div id="logout-button"></div>
-          </span>
-        </div>
+              <div id="logout-button"></div>
       </div>
     </div>
 </nav>`;

@@ -1,1 +1,24 @@
-// this will contain the card and the loop to show them all
+// import clearDom from '../utils/clearDom';
+import renderToDOM from '../utils/renderToDom';
+
+const emptyLanguages = () => {
+  const domString = '<h1>No Languages</h1>';
+  renderToDOM('#languages-container', domString);
+};
+
+const showLanguages = (array) => {
+  // clearDom();
+
+  if (array.length === 0) {
+    emptyLanguages(); // if the array is empty, display "No Vocab"
+  } else {
+    // if the array is not empty, loop through the vocab items
+    let domString = '';
+    array.forEach((language) => {
+      domString += `<button type="button" class="btn btn-outline-success">${language.title}</button>`;
+    });
+    renderToDOM('#languages-container', domString);
+  }
+};
+
+export { emptyLanguages, showLanguages };

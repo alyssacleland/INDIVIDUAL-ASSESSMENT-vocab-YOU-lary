@@ -9,3 +9,6 @@ const client = {
 };
 
 export default client;
+
+// this has to do with firebase data. see similarities in .env file.
+// "This file is likely included in other parts of the application to configure services like Firebase or connect to an API using these environment-specific details."

@@ -18,7 +18,7 @@ const showVocab = (array) => {
       domString += `<div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">${vocab.title}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">need to do merged promsie, rn is the firebase key: ${vocab.language}</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">${vocab.languageName}</h6>
     <p class="card-text">${vocab.definition}</p>
     <a href="#" class="card-link">Edit (placeholder)</a>
     <a href="#" class="card-link">Delete (placeholder)</a>

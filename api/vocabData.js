@@ -11,9 +11,28 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
     },
   })
     .then((response) => response.json())
-    .then((data) => {
+    .then(async (data) => {
       if (data) {
-        resolve(Object.values(data)); // converts the data object returned by the fetch call into an array
+        const vocabArray = Object.values(data); // converts the data object returned by the fetch call into an array
+
+        const vocabWithLanguages = await Promise.all(vocabArray.map(async (vocab) => { // the function inside map() runs asynchronously for each item in the array. Promise.all() waits for all of them to finish before returning the result.
+          const languageKey = vocab.language; // firebase key for the corresponding language
+
+          // fetch the language data using the key
+          const languageResponse = await fetch(`${endpoint}/languages/${languageKey}.json`); // fetches the actual language item
+          const languageData = await languageResponse.json(); // takes the raw response body of languageResponse and parses it into a JavaScript object, which you can use in your code.
+
+          // add the language name to the vocab item. jk eslint said no. instead, create a new obj based on the vocab and add the lang name
+          const updatedVocab = { ...vocab, languageName: languageData ? languageData.title : 'Unkknown Language' }; // uses ternary. If languageName is truthy (is not null or undefined), then it assigns languageData.title to languageName. if it is falsy, then it assigns 'unknown language'
+          // simpler (no ternary) for my understanding: sets languageName to languageData.title
+          // languageData.title accesses the actual language name
+          // ...vocab: spread operator: copies the vocab object and combines it with languageName
+          // so we use xxx.languageName in our interpolation in vocab card to show the name, not the firebase key
+
+          return updatedVocab; // return the updated vocab item with the language name
+        }));
+
+        resolve(vocabWithLanguages);
       } else {
         resolve([]); // handle a null value from the API when there are no Vocab in the database
       }
@@ -22,3 +41,12 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
 });
 
 export default getVocab;
+// async: This keyword is used to define a function that will always return a Promise. Any function marked as async can use the await keyword inside it.
+
+// await: Inside an async function, await is used to pause the function's execution until the Promise resolves (or rejects), essentially making it easier to work with asynchronous code.
+
+// awaits looks cleaner then chaining a bunch of .then's
+
+/// For example, when you call an asynchronous function like fetch(), it returns a Promise. If you use await with it, the code waits for the fetch() to finish before continuing.
+
+// Promise.all() is a method that takes an array of Promises and returns a new Promise. This new Promise resolves when all the Promises in the array resolve, or it rejects as soon as one Promise rejects.

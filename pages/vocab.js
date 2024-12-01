@@ -29,6 +29,4 @@ const showVocab = (array) => {
   }
 };
 
-// todo: 1. the buttons. ohhh boy. and 2. display the language. see merged promises in amazon. authorobject.
-
 export { emptyVocab, showVocab };

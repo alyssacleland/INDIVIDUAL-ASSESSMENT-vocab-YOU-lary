@@ -41,8 +41,8 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
 });
 
 // GET VOCAB BY LANGUAGE (FILTER)
-const filterVocabByLanguage = (uid, languageFirebaseKey) => new Promise((resolve, reject) => { // button click (dom events), where this is called, will pass user.uid and languageFirebaseKey (which is the id of the button, which is the firebase key of that button's language)
-  fetch(`${endpoint}/vocab.json?orderBy="uid"&equaltTo=${uid}"`, { // this is just getting all vocab by uid
+const filterVocabByLanguage = (uid, languageFirebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, { // this is just getting all vocab by uid
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -51,9 +51,21 @@ const filterVocabByLanguage = (uid, languageFirebaseKey) => new Promise((resolve
     .then((response) => response.json())
     .then((data) => {
       const filteredVocab = Object.values(data).filter((item) => item.language === languageFirebaseKey); // keeps only vocab items where the language matches the selected language key.
-      resolve(filteredVocab);
+
+      return Promise.all( // Promise.all handles multiple asynchronous fetches for each vocab's language details
+        filteredVocab.map((vocab) => fetch(`${endpoint}/languages/${vocab.language}.json`) // get the language name from its firebasekey
+          .then((langResponse) => langResponse.json()) // put the language data in json format
+          .then((languageData) => {
+            const updatedVocab = {
+              ...vocab,
+              languageName: languageData ? languageData.title : 'Unknown Language' // assign language name
+            };
+            return updatedVocab;
+          }))
+      );
     })
-    .catch(reject);
+    .then(resolve) // resolve with the updated vocab data
+    .catch(reject); // catch any errors and reject the promise
 });
 
 export { getVocab, filterVocabByLanguage };

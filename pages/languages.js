@@ -15,7 +15,7 @@ const showLanguages = (array) => {
     // if the array is not empty, loop through the vocab items
     let domString = '';
     array.forEach((language) => {
-      domString += `<button type="button" class="btn btn-outline-success">${language.title}</button>`;
+      domString += `<button type="button" class="btn btn-outline-success language-button" id="${language.firebaseKey}">${language.title}</button>`;
     });
     renderToDOM('#languages-container', domString);
   }

@@ -2,7 +2,7 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL; // this is the same as dburl in postman. here it can be traced back to APP_DATABASE_URL in .env.
 
-// GET VOCAB BY UID
+// GET LANGUAGE BY UID
 const getLanguages = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/languages.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',

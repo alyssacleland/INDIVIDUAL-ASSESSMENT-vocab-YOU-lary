@@ -10,7 +10,7 @@ const navBar = () => {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="#">Create Entry</a>
+          <a class="nav-link" href="#" id="add-vocab-btn">Create Entry</a>
           <a class="nav-link disabled" aria-disabled="true">Create Language</a>
           <a class="nav-link disabled" aria-disabled="true">Community</a>
         </div>

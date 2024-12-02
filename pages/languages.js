@@ -17,6 +17,11 @@ const showLanguages = (array) => {
     array.forEach((language) => {
       domString += `<button type="button" class="btn btn-outline-success language-button" id="${language.firebaseKey}">${language.title}</button>`;
     });
+    // Add the "Show All" button after the languages
+    domString += `
+        <button type="button" class="btn btn-outline-dark" id="show-all-btn">Show All</button>
+      `;
+
     renderToDOM('#languages-container', domString);
   }
 };

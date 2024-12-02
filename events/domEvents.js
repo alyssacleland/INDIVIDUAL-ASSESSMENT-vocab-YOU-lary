@@ -1,8 +1,9 @@
 import { filterVocabByLanguage } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
+import startApp from '../utils/startApp';
 
 const domEvents = (user) => { // higher order function that accepts user and sets up other functions to use this arg
-// LANGUGAGE BUTTONSs
+// *******LANGUGAGE BUTTONS**********
   document.querySelectorAll('.language-button').forEach((button) => {
     button.addEventListener('click', (event) => {
       const languageFirebaseKey = event.target.id;
@@ -10,6 +11,12 @@ const domEvents = (user) => { // higher order function that accepts user and set
 
       filterVocabByLanguage(user.uid, languageFirebaseKey).then((filteredVocab) => showVocab(filteredVocab));
     });
+  });
+
+  // *******SHOW ALL BUTTON**********
+  document.getElementById('show-all-btn').addEventListener('click', () => {
+    // Call the startApp function to re-render everything, showing all cards
+    startApp(user);
   });
 };
 

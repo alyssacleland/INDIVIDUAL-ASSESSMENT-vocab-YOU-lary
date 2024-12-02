@@ -68,7 +68,40 @@ const filterVocabByLanguage = (uid, languageFirebaseKey) => new Promise((resolve
     .catch(reject); // catch any errors and reject the promise
 });
 
-export { getVocab, filterVocabByLanguage };
+// CREATE A VOCAB
+
+const createVocab = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload), // puts the payload in a format compatile with firebase?
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+// UPDATE VOCAB
+const updateVocab = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'applicatio/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
+// to do: delete a vocab
+
+export {
+  getVocab, filterVocabByLanguage, createVocab, updateVocab
+};
 // async: This keyword is used to define a function that will always return a Promise. Any function marked as async can use the await keyword inside it.
 
 // await: Inside an async function, await is used to pause the function's execution until the Promise resolves (or rejects), essentially making it easier to work with asynchronous code.

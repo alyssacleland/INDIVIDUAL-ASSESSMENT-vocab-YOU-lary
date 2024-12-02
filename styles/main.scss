@@ -14,8 +14,15 @@ body {
   #languages-container button {
     margin: 10px;    
   }
+  
+  #store {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
   #store .card {
     margin: 10px;
+    box-sizing: border-box;
   }
 }

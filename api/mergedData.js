@@ -1,4 +1,5 @@
 import client from '../utils/client';
+// import { deleteSingleLanguage } from './languagesData';
 
 const endpoint = client.databaseURL;
 
@@ -16,3 +17,14 @@ const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export default getSingleVocab;
+
+// delete languages Vocab relationship... actually i don't need this yet. not unless i get to the point of deleting languages. i don't think deleting a vocab will delete the associated language.
+// const deleteLanguagesVoacbRelationship = (firebaseKey) => new Promise((resolve, reject) => {
+//   getLanguageVocab(firebaseKey).then((languageVocabArray) => {
+//     const deleteVocabPromises = languageVocabArray.map((vocab) => deleteVocab(vocab.firebaseKey));
+
+//     Promise.all(deleteVocabPromises).then(() => {
+//       deleteSingleLanguage(firebaseKey).then(resolve);
+//     });
+//   }).catch(reject);
+// });

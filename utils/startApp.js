@@ -2,7 +2,7 @@ import domBuilder from '../components/shared/domBuilder';
 import navBar from '../components/shared/navbar';
 import { getVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
-import getLanguages from '../api/languagesData';
+import { getLanguages } from '../api/languagesData';
 import { showLanguages } from '../pages/languages';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';

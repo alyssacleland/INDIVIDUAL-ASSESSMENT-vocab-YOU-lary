@@ -25,9 +25,7 @@ const formEvents = (user) => {
       });
     }
 
-    // to do run the patch payload thru update book
-
-    // to do: CLICK EVENT FOR EDITING A VOCAB
+    // to do: CLICK EVENT FOR SUBMITTING FORM FOR EDITING A VOCAB
   });
 };
 

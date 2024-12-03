@@ -1,13 +1,13 @@
 import getLanguages from '../../api/languagesData';
 import renderToDOM from '../../utils/renderToDom';
 
-const selectLanguage = (languageId, uid) => { // languageID OR blank string
+const selectLanguage = (languageId) => { // languageID OR blank string
   let domString = `<label language">Select a language</label>
     <select class="form-control" id="language" required>
     <option value="">Select a language</option>`;
 
   // loop thru the languages
-  getLanguages(uid).then((languagesArray) => { // get languages expects a string (uid), not an entire object (user)
+  getLanguages().then((languagesArray) => { // get languages expects a string (uid), not an entire object (user)
     languagesArray.forEach((language) => {
       domString += `
           <option 

@@ -14,7 +14,7 @@ const startApp = (user) => {
   navigationEvents(user);
   formEvents(user);
   getVocab(user.uid).then((vocab) => showVocab(vocab));
-  getLanguages(user.uid).then((language) => {
+  getLanguages().then((language) => {
     showLanguages(language);
     domEvents(user);
   });

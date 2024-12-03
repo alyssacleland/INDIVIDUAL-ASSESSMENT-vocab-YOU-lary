@@ -1,7 +1,7 @@
-# This is the name of my Project  [![Netlify Status](https://api.netlify.com/api/v1/badges/b38187dc-a1d2-4b2c-bb9e-5e67ee8feafb/deploy-status)](https://app.netlify.com/sites/vocabyoulary-alyssa/deploys)
+# vocabYOUlary  [![Netlify Status](https://api.netlify.com/api/v1/badges/b38187dc-a1d2-4b2c-bb9e-5e67ee8feafb/deploy-status)](https://app.netlify.com/sites/vocabyoulary-alyssa/deploys)
 <!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
 
-Here I am putting an overview of what my project is about. It comes below the name of my project so that others can read what it is about and get more details.
+This app helps users track and organize vocabulary words in multiple languages. It allows adding, editing, and deleting entries, with the ability to filter by language.
 
 [View App](https://vocabyoulary-alyssa.netlify.app/)
 
@@ -26,7 +26,7 @@ N/A
 - [Flow Chart for MVP](https://www.figma.com/board/78EI4Ig8VtVjMrzapcZjdl/vocabYOUlary-data-flow-chart?node-id=0-1&t=dUTCTibutMGwyj2L-1)
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
-<img width="1148" alt="Project Screenshot" src="/Users/alyssacleland/workspace/foundations/inclass/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary/components/Images/projectScreenshot.png">
+<img width="1148" alt="Project Screenshot" src="https://github.com/alyssacleland/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary/blob/7e1319b09cfb601e1c62e05b30ed3fa89f28a66c/components/Images/projectScreenshot.png">
 
 ## Contributors
 - [Alyssa Cleland](https://github.com/alyssacleland)

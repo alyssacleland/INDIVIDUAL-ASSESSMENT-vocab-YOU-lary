@@ -1,4 +1,4 @@
-import getLanguages from '../../api/languagesData';
+import { getLanguages } from '../../api/languagesData';
 import renderToDOM from '../../utils/renderToDom';
 
 const selectLanguage = (languageId) => { // languageID OR blank string

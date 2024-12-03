@@ -26,6 +26,22 @@ const formEvents = (user) => {
     }
 
     // to do: CLICK EVENT FOR SUBMITTING FORM FOR EDITING A VOCAB
+    if (e.target.id.includes('update-vocab')) { // addVocabForm will have the id update-vocab if a firebaseKey exists (see ternary there)
+      const [, firebaseKey] = e.target.id.split('--'); // comments in domEvents explain this destructuring process further if needed
+      const payload = {
+        title: document.querySelector('#title').value,
+        definition: document.querySelector('#definition').value,
+        language: document.querySelector('#language').value, // there is an id for this in the addVocabForm, but that is rendered in via the selectVocab Function
+        public: false,
+        time_submitted: new Date().toISOString(),
+        firebaseKey,
+      };
+      // add firebase key to the payload after it is created
+      updateVocab(payload).then(() => {
+        getVocab(user.uid).then(showVocab);
+      });
+    }
+    // don't mess with below
   });
 };
 

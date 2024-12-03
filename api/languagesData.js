@@ -21,4 +21,17 @@ const getLanguages = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default getLanguages;
+// DELETE LANGUAGE... PROB WON'T ACTUALLY USE! Added for deleting relationship, but i don't think i need to do that now
+const deleteSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/languages/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+export { getLanguages, deleteSingleLanguage };

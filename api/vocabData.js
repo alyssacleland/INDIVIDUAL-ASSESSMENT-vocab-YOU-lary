@@ -110,8 +110,48 @@ const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// SEARCH VOCAB
+const vocabSearch = (uid, searchValue) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, { // fetch user's vocab by uid
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (!data) {
+        resolve([]); // if no vocab is found, return an empty array
+        return;
+      }
+
+      const vocabArray = Object.values(data); // converts the data object returned by the fetch call into an array
+
+      // Fetch language details for each vocab item using Promise.all to wait for all fetches
+      Promise.all(
+        vocabArray.map((vocab) => fetch(`${endpoint}/languages/${vocab.language}.json`) // fetch the actual language item by firebase key
+          .then((languageResponse) => languageResponse.json()) // takes the raw response body and parses it into a JavaScript object
+          .then((languageData) => ({
+            ...vocab, // copies the vocab object and combines it with languageName
+            languageName: languageData ? languageData.title : 'Unknown Language', // assigns languageData.title to languageName or falls back to 'Unknown Language'
+          })))
+      )
+        .then((searchVocabWithLanguages) => {
+          // Object.values(data): This method takes the data object (which is the books retrieved from the database) and extracts all of its values. Since Firebase stores data in an object with each key being a unique book ID, Object.values(data) will return an array of book objects.
+          // .filter((item) => XXX): This .filter() method goes through the array of books and returns only the books where XXX is true.
+          const filteredResults = searchVocabWithLanguages.filter(
+            (item) => item.title.toLowerCase().includes(searchValue) // searches by title
+              || (item.languageName && item.languageName.toLowerCase().includes(searchValue)) // searches by language name if it's not null/undefined
+          );
+
+          resolve(filteredResults); // resolve with filtered results
+        })
+        .catch(reject); // catch any errors in fetching language details
+    })
+    .catch(reject); // catch any errors in fetching vocab
+});
 export {
-  getVocab, filterVocabByLanguage, createVocab, updateVocab, deleteVocab
+  getVocab, filterVocabByLanguage, createVocab, updateVocab, deleteVocab, vocabSearch
 };
 // async: This keyword is used to define a function that will always return a Promise. Any function marked as async can use the await keyword inside it.
 
